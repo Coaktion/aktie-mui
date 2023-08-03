@@ -2,14 +2,14 @@ import { ThemeOptions } from '@mui/material/styles';
 
 export const AktieTheme: ThemeOptions = {
   shape: {
-    borderRadius: 8,
+    borderRadius: 8
   },
   palette: {
     primary: {
-      main: '#E1008B',
+      main: '#E1008B'
     },
     secondary: {
-      main: '#8D1097',
+      main: '#8D1097'
     }
   }
 };
