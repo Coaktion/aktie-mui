@@ -33,6 +33,7 @@
   "license": "ISC",
   "dependencies": {
     "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.3",
     "@mui/material": "^5.14.3"
   },
   "devDependencies": {
