@@ -12,14 +12,14 @@ export const AktieTheme: ThemeOptions = {
       main: '#F00000'
     },
     warning: {
-      main: '#ED6C02'      
+      main: '#ED6C02'
     },
     info: {
       main: '#0288D1'
-    },
+    }
   },
   typography: {
-    fontFamily: 'Roboto',
+    fontFamily: 'Roboto'
   },
   components: {
     MuiButton: {
@@ -32,18 +32,18 @@ export const AktieTheme: ThemeOptions = {
             outline: '2px solid #0000008F',
             outlineOffset: '3px'
           }
-        },
+        }
       }
     },
     MuiSelect: {
       defaultProps: {
-        variant: 'outlined',
-      },
+        variant: 'outlined'
+      }
     },
     MuiDialog: {
       styleOverrides: {
         root: {
-          borderRadius: 8,
+          borderRadius: 8
         }
       }
     },

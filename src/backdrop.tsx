@@ -6,17 +6,15 @@ interface BackdropLoadingProps {
   size?: number;
 }
 
-const BackdropLoading: React.FC<BackdropLoadingProps> = (
-  { open, size = 80 }: BackdropLoadingProps
-) => {
+const BackdropLoading: React.FC<BackdropLoadingProps> = ({
+  open,
+  size = 80
+}: BackdropLoadingProps) => {
   return (
-    <Backdrop
-      sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
-      open={open}
-    >
+    <Backdrop sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }} open={open}>
       <CircularProgress size={size} />
     </Backdrop>
-  )
-}
+  );
+};
 
 export default BackdropLoading;
