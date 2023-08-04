@@ -3,7 +3,7 @@ import { ThemeOptions } from '@mui/material/styles';
 export const AktieTheme: ThemeOptions = {
   palette: {
     primary: {
-      main: '#E1008B',
+      main: '#E1008B'
     },
     secondary: {
       main: '#8D1097'
@@ -11,6 +11,15 @@ export const AktieTheme: ThemeOptions = {
     error: {
       main: '#F00000'
     },
+    warning: {
+      main: '#ED6C02'      
+    },
+    info: {
+      main: '#0288D1'
+    },
+  },
+  typography: {
+    fontFamily: 'Roboto',
   },
   components: {
     MuiButton: {
@@ -21,14 +30,26 @@ export const AktieTheme: ThemeOptions = {
           textTransform: 'capitalize',
           ':focus': {
             outline: '2px solid #0000008F',
-            outlineOffset: '3px',
+            outlineOffset: '3px'
           }
+        },
+      }
+    },
+    MuiSelect: {
+      defaultProps: {
+        variant: 'outlined',
+      },
+    },
+    MuiDialog: {
+      styleOverrides: {
+        root: {
+          borderRadius: 8,
         }
       }
     },
     MuiTextField: {
       defaultProps: {
-        variant: 'outlined',
+        variant: 'outlined'
       }
     }
   }
