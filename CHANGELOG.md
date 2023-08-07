@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.2](https://github.com/Coaktion/aktie-mui/compare/v0.2.1...v0.2.2) (2023-08-07)
+
+
+### Bug Fixes
+
+* excluding tests folder from build ([2314269](https://github.com/Coaktion/aktie-mui/commit/2314269033e843919c27df7ec702dd89231fb55c))
+
 ### [0.2.1](https://github.com/Coaktion/aktie-mui/compare/v0.2.0...v0.2.1) (2023-08-07)
 
 
