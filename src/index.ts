@@ -1,2 +1,2 @@
 export { AktieTheme } from './aktie-theme';
-export { default as CoBackdrop } from './backdrop';
+export { default as AktBackdrop } from './backdrop';
