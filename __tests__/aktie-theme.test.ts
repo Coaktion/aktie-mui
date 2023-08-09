@@ -2,12 +2,12 @@ import { AktieTheme } from '../src/aktie-theme';
 
 describe('AktieTheme Tests', () => {
   it('Should have the correct primary color', () => {
-    const expected = { main: '#E1008B' };
+    const expected = { main: '#3E838D' };
     expect(AktieTheme.palette?.primary).toStrictEqual(expected);
   });
 
   it('Should have the correct secondary color', () => {
-    const expected = { main: '#8D1097' };
+    const expected = { main: '#00A7CC' };
     expect(AktieTheme.palette?.secondary).toStrictEqual(expected);
   });
 
