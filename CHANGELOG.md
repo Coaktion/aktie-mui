@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.3](https://github.com/Coaktion/aktie-mui/compare/v0.2.2...v0.2.3) (2023-08-09)
+
+
+### Features
+
+* add new primary and secondary colors ([13ad5fd](https://github.com/Coaktion/aktie-mui/commit/13ad5fd97635f4478aec5f62a7de62a625d71137))
+
+
+### Bug Fixes
+
+* changing the wrong parameter name ([c5aa2c9](https://github.com/Coaktion/aktie-mui/commit/c5aa2c9ab868325d3e27ad604e9ce03f6a4299a0))
+
 ### [0.2.2](https://github.com/Coaktion/aktie-mui/compare/v0.2.1...v0.2.2) (2023-08-07)
 
 
