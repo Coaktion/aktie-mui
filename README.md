@@ -39,7 +39,7 @@ const Test: React.FC = () => {
   const [loading, setLoading] = React.useState(true);
 
   return (
-    <AktBackdrop open={fullLoading} size={100} />
+    <AktBackdrop open={loading} size={100} />
   );
 };
 
