@@ -3,10 +3,10 @@ import { ThemeOptions } from '@mui/material/styles';
 export const AktieTheme: ThemeOptions = {
   palette: {
     primary: {
-      main: '#E1008B'
+      main: '#3E838D'
     },
     secondary: {
-      main: '#8D1097'
+      main: '#00A7CC'
     },
     error: {
       main: '#F00000'
