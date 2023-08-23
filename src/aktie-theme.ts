@@ -23,6 +23,9 @@ export const AktieTheme: ThemeOptions = {
   },
   components: {
     MuiButton: {
+      defaultProps: {
+        variant: 'contained'
+      },
       styleOverrides: {
         root: {
           borderRadius: 8,
