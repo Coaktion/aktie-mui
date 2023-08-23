@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/Coaktion/aktie-mui/compare/v0.2.3...v0.3.0) (2023-08-23)
+
+
+### Features
+
+* add AutoCompleteVirtualized component ([07784ad](https://github.com/Coaktion/aktie-mui/commit/07784ad62fdaad04537d8880f01c778745b7b5a1))
+* add error-message component ([99bbcc6](https://github.com/Coaktion/aktie-mui/commit/99bbcc66726811245f8015922799482b5ef195de))
+* add material UI Button default variant as contained ([a3c1d45](https://github.com/Coaktion/aktie-mui/commit/a3c1d456000b1a5d0d3bc5452245861b97eca09c))
+* add react and react-window lib ([e7419e7](https://github.com/Coaktion/aktie-mui/commit/e7419e700002eb65d0bc55b4bdbf8b95cfd9ebd8))
+* exporting new components ([69a8723](https://github.com/Coaktion/aktie-mui/commit/69a87236c8bcd21ef10726ffac25bbfeee7ef308))
+
 ### [0.2.3](https://github.com/Coaktion/aktie-mui/compare/v0.2.2...v0.2.3) (2023-08-09)
 
 
