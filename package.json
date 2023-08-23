@@ -8,7 +8,7 @@
     "dist"
   ],
   "publishConfig": {
-    "access": "restricted",
+    "access": "public",
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
