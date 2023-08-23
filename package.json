@@ -17,7 +17,7 @@
     "watch": "tsc --watch",
     "prepublishOnly": "npm run build",
     "pretest": "npm run build",
-    "test": "jest --coverage",
+    "test": "jest",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --fix",
     "format": "prettier --loglevel warn --write \"**/*.{js,json,jsx,md,ts,tsx,html}\"",
@@ -44,6 +44,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
     "@trivago/prettier-plugin-sort-imports": "^4.0.0",
     "@types/jest": "^29.2.5",
     "@types/node": "^18.11.18",
