@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/Coaktion/aktie-mui/compare/v0.3.1...v0.4.0) (2023-08-23)
+
+
+### Features
+
+* add @testing-library/user-event lib ([c93be47](https://github.com/Coaktion/aktie-mui/commit/c93be47a1ddf938efec8cbfda0f712e3b93b976f))
+* add DialogSlide component ([7255277](https://github.com/Coaktion/aktie-mui/commit/725527724f18786c0485311bb379a9c4545f51f4))
+* exporting new component ([b7de630](https://github.com/Coaktion/aktie-mui/commit/b7de630d28012a3438d06680cf6ce951f6c87f62))
+
 ### [0.3.1](https://github.com/Coaktion/aktie-mui/compare/v0.3.0...v0.3.1) (2023-08-23)
 
 ## [0.3.0](https://github.com/Coaktion/aktie-mui/compare/v0.2.3...v0.3.0) (2023-08-23)
