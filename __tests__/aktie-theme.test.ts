@@ -68,4 +68,11 @@ describe('AktieTheme Tests', () => {
       expected
     );
   });
+
+  it('Should have the correct button default props', () => {
+    const expected = { variant: 'contained' };
+    expect(AktieTheme.components?.MuiButton?.defaultProps).toStrictEqual(
+      expected
+    );
+  });
 });
