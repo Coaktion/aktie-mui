@@ -4,6 +4,18 @@ import Chip from '@mui/material/Chip';
 import TextField from '@mui/material/TextField';
 import { useState } from 'react';
 
+/**
+ * @name AktAutoCompleteMultiple
+ * @description AutoCompleteMultiple options component
+ * @param {any[]} rows - rows to be displayed in the dropdown
+ * @param {any} value - the value of the selected item
+ * @param {string} iconColor - the color of the down arrow icon
+ * @param {(data: any) => void} onChange - the function to be called when the value changes
+ * @returns {React.FC<AktAutoCompleteMultipleProps>}
+ * @example
+ * <AktAutoCompleteMultiple rows={rows} value={value} onChange={handleChange} />
+ */
+
 interface AktAutoCompleteMultipleProps {
   rows: any[];
   value?: any;
