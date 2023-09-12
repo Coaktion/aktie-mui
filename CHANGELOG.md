@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/Coaktion/aktie-mui/compare/v0.4.0...v0.5.0) (2023-09-12)
+
+
+### Features
+
+* add auto-complete component ([570ff1d](https://github.com/Coaktion/aktie-mui/commit/570ff1d490b26ccd06ca945f86fcf7ac3acf761e))
+* add auto-complete-multiple component ([2963537](https://github.com/Coaktion/aktie-mui/commit/296353703812d9bdd017964e70000b310d756da2))
+* add docstring to AutoCompleteMultiple ([73f5dd6](https://github.com/Coaktion/aktie-mui/commit/73f5dd6e7dde0067826a153f9d8cd23e81252cfe))
+* exporting new components ([14e867d](https://github.com/Coaktion/aktie-mui/commit/14e867d48399ca9c4a22cfaede4f2ff20f4f711b))
+
 ## [0.4.0](https://github.com/Coaktion/aktie-mui/compare/v0.3.1...v0.4.0) (2023-08-23)
 
 
