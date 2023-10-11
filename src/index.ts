@@ -5,3 +5,5 @@ export { default as AktAutoCompleteVirtualized } from './auto-complete-virtualiz
 export { default as AktDialogSlide } from './dialog-slide';
 export { default as AktAutoComplete } from './auto-complete';
 export { default as AktAutoCompleteMultiple } from './auto-complete-multiple';
+export { default as AktLoadingButton } from './loading-button';
+export { default as AktTable } from './table';
