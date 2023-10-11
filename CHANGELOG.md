@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.6.0](https://github.com/Coaktion/aktie-mui/compare/v0.5.0...v0.6.0) (2023-10-11)
+
+
+### Features
+
+* add loadin-button component ([86fe91e](https://github.com/Coaktion/aktie-mui/commit/86fe91e3b2849f1bd70e2878ad21a07723330999))
+* add table component ([7d97c34](https://github.com/Coaktion/aktie-mui/commit/7d97c347ea7ffee40930532e5ff21e3636818cf9))
+
 ## [0.5.0](https://github.com/Coaktion/aktie-mui/compare/v0.4.0...v0.5.0) (2023-09-12)
 
 
