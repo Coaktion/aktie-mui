@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.6.1](https://github.com/Coaktion/aktie-mui/compare/v0.6.0...v0.6.1) (2023-10-30)
+
+
+### Bug Fixes
+
+* add titles to auto-complete components ([c3b58e8](https://github.com/Coaktion/aktie-mui/commit/c3b58e82e394d1a42217104eca56fa04ef80d5d8))
+
 ## [0.6.0](https://github.com/Coaktion/aktie-mui/compare/v0.5.0...v0.6.0) (2023-10-11)
 
 
