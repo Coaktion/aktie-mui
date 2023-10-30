@@ -85,6 +85,7 @@ const ListboxComponent = React.forwardRef<
  * @param {any} value - value of the autocomplete
  * @param {string} valueKey - key of the value of the autocomplete
  * @param {string} labelKey - key of the label of the autocomplete
+ * @param {string} title - title of the autocomplete
  * @returns {React.FC<Props>}
  * @constructor
  * @component
@@ -99,6 +100,7 @@ interface AutoCompleteVirtualizedProps {
   value: any;
   valueKey?: string;
   labelKey: string;
+  title?: string;
 }
 
 const AutoCompleteVirtualized: React.FC<AutoCompleteVirtualizedProps> = ({
@@ -107,6 +109,7 @@ const AutoCompleteVirtualized: React.FC<AutoCompleteVirtualizedProps> = ({
   placeholder,
   value,
   labelKey,
+  title,
   valueKey
 }: AutoCompleteVirtualizedProps) => {
   labelKeyAux = labelKey;
@@ -114,6 +117,7 @@ const AutoCompleteVirtualized: React.FC<AutoCompleteVirtualizedProps> = ({
     <Autocomplete
       id="virtualize-autocomplete"
       disableListWrap
+      title={title}
       ListboxComponent={ListboxComponent}
       options={rows}
       data-testid="virtualize-autocomplete-test"

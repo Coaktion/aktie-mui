@@ -10,6 +10,7 @@ import { useState } from 'react';
  * @param {any[]} rows - rows to be displayed in the dropdown
  * @param {any} value - the value of the selected item
  * @param {string} iconColor - the color of the down arrow icon
+ * @param {string} title - the title of the dropdown
  * @param {(data: any) => void} onChange - the function to be called when the value changes
  * @returns {React.FC<AktAutoCompleteMultipleProps>}
  * @example
@@ -19,6 +20,7 @@ import { useState } from 'react';
 interface AktAutoCompleteMultipleProps {
   rows: any[];
   value?: any;
+  title?: string;
   iconColor?: string;
   onChange: (data: any) => void;
 }
@@ -26,6 +28,7 @@ interface AktAutoCompleteMultipleProps {
 const AktAutoCompleteMultiple: React.FC<AktAutoCompleteMultipleProps> = ({
   rows,
   value,
+  title,
   iconColor = '#6b6b6b',
   onChange
 }: AktAutoCompleteMultipleProps) => {
@@ -41,6 +44,7 @@ const AktAutoCompleteMultiple: React.FC<AktAutoCompleteMultipleProps> = ({
       <Autocomplete
         multiple
         open={isOpen}
+        title={title}
         onBlur={() => setIsOpen(false)}
         options={rows}
         disableCloseOnSelect

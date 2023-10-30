@@ -18,6 +18,7 @@ import { useState } from 'react';
  * @param {string} groupFontSize - the font size of the group text element
  * @param {string} groupFontWeight - the font weight of the group text element
  * @param {string} iconColor - the color of the down arrow icon
+ * @param {string} title - the title of the dropdown
  * @param {(data: any) => void} onChange - the function to be called when the value changes
  * @returns {React.FC<AktAutoCompleteProps>}
  * @example
@@ -35,6 +36,7 @@ interface AktAutoCompleteProps {
   groupFontSize?: string;
   groupFontWeight?: string;
   iconColor?: string;
+  title?: string;
   onChange: (data: any) => void;
 }
 
@@ -49,6 +51,7 @@ const AktAutoComplete: React.FC<AktAutoCompleteProps> = ({
   groupFontSize = '1rem',
   groupFontWeight = 'bold',
   iconColor = '#6b6b6b',
+  title,
   onChange
 }: AktAutoCompleteProps) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -64,6 +67,7 @@ const AktAutoComplete: React.FC<AktAutoCompleteProps> = ({
         open={isOpen}
         onBlur={() => setIsOpen(false)}
         options={rows}
+        title={title}
         data-testid="auto-complete"
         getOptionLabel={(option) => option[textKey]}
         groupBy={groupKey ? (option) => String(option[groupKey]) : () => ''}
