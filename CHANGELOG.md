@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.6.2](https://github.com/Coaktion/aktie-mui/compare/v0.6.1...v0.6.2) (2023-12-11)
+
+
+### Bug Fixes
+
+* fix rowsPerPage ([f0e930b](https://github.com/Coaktion/aktie-mui/commit/f0e930bfe65b818ca70f4d75ddea83e4a3106469))
+
 ### [0.6.1](https://github.com/Coaktion/aktie-mui/compare/v0.6.0...v0.6.1) (2023-10-30)
 
 
