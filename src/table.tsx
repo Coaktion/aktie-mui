@@ -32,6 +32,7 @@ export interface AktTableColumn {
  * @property {string} [rowsPerPageLabel] - The label for the number of rows per page
  * @property {CSSProperties} [tableHeadStyles] - The styles for the table head
  * @property {CSSProperties} [tableStyles] - The styles for the table
+ * @property {(rowsPerPage: number) => Promise<void>} [rowsPerPageFunction] - The function to call when the rows per page changes
  * @example
  * const columns = [
  *  { id: 'name', label: 'Name' },
@@ -54,6 +55,7 @@ interface AktTableProps {
   rowsPerPageLabel?: string;
   tableHeadStyles?: CSSProperties;
   tableStyles?: CSSProperties;
+  rowsPerPageFunction?: (rowsPerPage: number) => Promise<void>;
 }
 
 const AktTable: React.FC<AktTableProps> = ({
@@ -63,18 +65,20 @@ const AktTable: React.FC<AktTableProps> = ({
   rowsPerPageOptions = [10, 25, 100],
   rowsPerPageLabel = 'Rows per page',
   tableHeadStyles,
-  tableStyles
+  tableStyles,
+  rowsPerPageFunction
 }: AktTableProps) => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(rowsPerPageDefault);
 
-  const handleChangePage = (event: unknown, newPage: number) => {
+  const handleChangePage = async (event: unknown, newPage: number) => {
     setPage(newPage);
   };
 
-  const handleChangeRowsPerPage = (
+  const handleChangeRowsPerPage = async (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
+    if (rowsPerPageFunction) await rowsPerPageFunction(+event.target.value);
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
