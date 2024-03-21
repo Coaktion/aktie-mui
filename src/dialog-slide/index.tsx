@@ -1,5 +1,5 @@
 import Dialog from '@mui/material/Dialog';
-import React, { ReactElement } from 'react';
+import React, { CSSProperties, ReactElement } from 'react';
 
 import Transition from './transition';
 
@@ -8,6 +8,7 @@ import Transition from './transition';
  * @param {boolean} open - Whether the dialog is open or not.
  * @param {function} setOpen - Function to set the open state of the dialog.
  * @param {ReactElement} children - The content of the dialog.
+ * @param {CSSProperties} dialogStyles - The styles of the dialog.
  * @returns {ReactElement} - The dialog.
  * @example
  * <AktDialogSlide open={open} setOpen={setOpen}>
@@ -19,12 +20,19 @@ interface AktDialogSlideProps {
   open: boolean;
   setOpen: (open: boolean) => void;
   children: ReactElement;
+  dialogStyles?: CSSProperties;
 }
 
 const AktDialogSlide: React.FC<AktDialogSlideProps> = ({
   children,
   open,
-  setOpen
+  setOpen,
+  dialogStyles = {
+    width: '30%',
+    maxWidth: 'none',
+    height: 'auto',
+    maxHeight: '90vh'
+  }
 }: AktDialogSlideProps) => {
   const handleModal = () => setOpen(!open);
 
@@ -35,6 +43,11 @@ const AktDialogSlide: React.FC<AktDialogSlideProps> = ({
       keepMounted
       onClose={handleModal}
       data-testid="dialog-slide"
+      PaperProps={{
+        sx: {
+          ...dialogStyles
+        }
+      }}
     >
       {children}
     </Dialog>
