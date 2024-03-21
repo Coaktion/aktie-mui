@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/Coaktion/aktie-mui/compare/v0.6.2...v1.0.0) (2024-03-21)
+
+
+### Features
+
+* add backdrop component ([43d7ef8](https://github.com/Coaktion/aktie-mui/commit/43d7ef8bb4fc8dead363ea13232191d4b50d2b6a))
+* add param to style dialog container ([2662aeb](https://github.com/Coaktion/aktie-mui/commit/2662aeb7f1a2317a3f6fc053b722d7a9cbfe5f94))
+* add table paper style ([8bac148](https://github.com/Coaktion/aktie-mui/commit/8bac14849626c600231e00ac7834cbc59b7a00eb))
+* add title component ([ff74f7a](https://github.com/Coaktion/aktie-mui/commit/ff74f7a25e40212f026f4228d46c77cc79cc5cfa))
+
+
+### Bug Fixes
+
+* remove ssh from test workflow ([884c31a](https://github.com/Coaktion/aktie-mui/commit/884c31a10cb2d13971f9c2f764203d6077aed535))
+
 ### [0.6.2](https://github.com/Coaktion/aktie-mui/compare/v0.6.1...v0.6.2) (2023-12-11)
 
 
