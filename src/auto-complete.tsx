@@ -39,7 +39,7 @@ interface AktAutoCompleteProps {
   title?: string;
   disabled?: boolean;
   onChange: (data: any) => void;
-  label?: string
+  label?: string;
 }
 
 const AktAutoComplete: React.FC<AktAutoCompleteProps> = ({
