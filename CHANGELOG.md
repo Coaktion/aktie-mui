@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/Coaktion/aktie-mui/compare/v1.0.0...v1.1.0) (2024-03-22)
+
+
+### Features
+
+* adding new props ([08ad73e](https://github.com/Coaktion/aktie-mui/commit/08ad73e698c1397b4a8863d54fe60ada6ef41b19))
+
 ## [1.0.0](https://github.com/Coaktion/aktie-mui/compare/v0.6.2...v1.0.0) (2024-03-21)
 
 
