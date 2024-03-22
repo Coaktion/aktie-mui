@@ -59,8 +59,8 @@ describe('AktTable', () => {
 
     expect(screen.getAllByRole('row')).toHaveLength(2);
 
-    const dropdownButton = screen.getByRole('button', {
-      name: /rows per page/i
+    const dropdownButton = screen.getByRole('combobox', {
+      name: /Rows per page/i
     });
     fireEvent.mouseDown(dropdownButton);
 

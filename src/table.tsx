@@ -56,6 +56,7 @@ interface AktTableProps {
   tableHeadStyles?: CSSProperties;
   tableStyles?: CSSProperties;
   rowsPerPageFunction?: (rowsPerPage: number) => Promise<void>;
+  paperStyles?: CSSProperties;
 }
 
 const AktTable: React.FC<AktTableProps> = ({
@@ -66,7 +67,8 @@ const AktTable: React.FC<AktTableProps> = ({
   rowsPerPageLabel = 'Rows per page',
   tableHeadStyles,
   tableStyles,
-  rowsPerPageFunction
+  rowsPerPageFunction,
+  paperStyles = { width: '100%' }
 }: AktTableProps) => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(rowsPerPageDefault);
@@ -84,7 +86,7 @@ const AktTable: React.FC<AktTableProps> = ({
   };
 
   return (
-    <Paper>
+    <Paper sx={{ ...paperStyles }}>
       <TableContainer style={tableStyles}>
         <Table stickyHeader aria-label="akt table">
           <TableHead>
