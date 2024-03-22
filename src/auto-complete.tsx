@@ -37,7 +37,9 @@ interface AktAutoCompleteProps {
   groupFontWeight?: string;
   iconColor?: string;
   title?: string;
+  disabled?: boolean;
   onChange: (data: any) => void;
+  label?: string
 }
 
 const AktAutoComplete: React.FC<AktAutoCompleteProps> = ({
@@ -52,7 +54,9 @@ const AktAutoComplete: React.FC<AktAutoCompleteProps> = ({
   groupFontWeight = 'bold',
   iconColor = '#6b6b6b',
   title,
-  onChange
+  disabled,
+  onChange,
+  label
 }: AktAutoCompleteProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -67,6 +71,7 @@ const AktAutoComplete: React.FC<AktAutoCompleteProps> = ({
         open={isOpen}
         onBlur={() => setIsOpen(false)}
         options={rows}
+        disabled={disabled}
         title={title}
         data-testid="auto-complete"
         getOptionLabel={(option) => option[textKey]}
@@ -109,6 +114,8 @@ const AktAutoComplete: React.FC<AktAutoCompleteProps> = ({
             {...params}
             value={value}
             fullWidth
+            label={label}
+            disabled={disabled}
             data-testid="auto-complete-input"
             InputProps={{
               ...params.InputProps,

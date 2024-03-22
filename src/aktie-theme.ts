@@ -16,6 +16,9 @@ export const AktieTheme: ThemeOptions = {
     },
     info: {
       main: '#0288D1'
+    },
+    success: {
+      main: '#48BB30'
     }
   },
   typography: {
