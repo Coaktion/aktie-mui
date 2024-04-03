@@ -21,6 +21,7 @@ interface AktAutoCompleteMultipleProps {
   rows: any[];
   value?: any;
   title?: string;
+  limitTags?: number;
   iconColor?: string;
   onChange: (data: any) => void;
 }
@@ -30,6 +31,7 @@ const AktAutoCompleteMultiple: React.FC<AktAutoCompleteMultipleProps> = ({
   value,
   title,
   iconColor = '#6b6b6b',
+  limitTags,
   onChange
 }: AktAutoCompleteMultipleProps) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,6 +46,7 @@ const AktAutoCompleteMultiple: React.FC<AktAutoCompleteMultipleProps> = ({
       <Autocomplete
         multiple
         open={isOpen}
+        limitTags={limitTags || -1}
         title={title}
         onBlur={() => setIsOpen(false)}
         options={rows}
