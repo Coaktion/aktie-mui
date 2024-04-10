@@ -1,11 +1,10 @@
-
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
+import DoneAllIcon from '@mui/icons-material/DoneAll';
 import { Checkbox } from '@mui/material';
 import Autocomplete from '@mui/material/Autocomplete';
 import Chip from '@mui/material/Chip';
 import TextField from '@mui/material/TextField';
-import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
-import CheckBoxIcon from '@mui/icons-material/CheckBox';
-import DoneAllIcon from '@mui/icons-material/DoneAll';
 import { useState } from 'react';
 
 /**
@@ -28,14 +27,14 @@ interface AktAutoCompleteMultipleProps {
   limitTags?: number;
   iconColor?: string;
   onChange: (data: any) => void;
-  allSelectOption: string
+  allSelectOption: string;
 }
 
 const optionStyles = {
   display: 'flex',
   alignItems: 'center',
   width: '100%',
-  gap: '8px',
+  gap: '8px'
 };
 
 const AktAutoCompleteMultiple: React.FC<AktAutoCompleteMultipleProps> = ({
@@ -49,10 +48,10 @@ const AktAutoCompleteMultiple: React.FC<AktAutoCompleteMultipleProps> = ({
   const [isOpen, setIsOpen] = useState(false);
 
   const handleChange = (value: any) => {
-
     if (value.includes(allSelectOption)) {
-      value = value.length === rows.length ? [] : rows.filter((item) => item !== allSelectOption)
-      setIsOpen(false)
+      // value = value.length === rows.length ? [] : rows.filter((item) => item !== allSelectOption)
+      value = rows.filter((item) => item !== allSelectOption);
+      setIsOpen(false);
     }
 
     onChange(value);
@@ -61,33 +60,33 @@ const AktAutoCompleteMultiple: React.FC<AktAutoCompleteMultipleProps> = ({
   const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
   const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
-  type OptionProps = { 
-    props: React.HTMLAttributes<HTMLLIElement>
-    option: any
-    selected: boolean
-  }
-  const Option = ({ props, option,  selected}: OptionProps ) => { 
+  type OptionProps = {
+    props: React.HTMLAttributes<HTMLLIElement>;
+    option: any;
+    selected: boolean;
+  };
+  const Option = ({ props, option, selected }: OptionProps) => {
     return (
       <li {...props}>
-      {option === allSelectOption ?
-        <div style={optionStyles}>
-         <DoneAllIcon style={{ color:'#48BB30' }} />
-         {option}
-      </div>
-      :
-      <div>
-        <Checkbox
-        icon={icon}
-        checkedIcon={checkedIcon}
-        style={{ marginRight: 8 }}
-        checked={selected}
-      />
-      {option}
-      </div>
-      }
-    </li>
-    )
-  }
+        {option === allSelectOption ? (
+          <div style={optionStyles}>
+            <DoneAllIcon style={{ color: '#48BB30' }} />
+            {option}
+          </div>
+        ) : (
+          <div>
+            <Checkbox
+              icon={icon}
+              checkedIcon={checkedIcon}
+              style={{ marginRight: 8 }}
+              checked={selected}
+            />
+            {option}
+          </div>
+        )}
+      </li>
+    );
+  };
   return (
     <>
       <Autocomplete
@@ -117,11 +116,7 @@ const AktAutoCompleteMultiple: React.FC<AktAutoCompleteMultipleProps> = ({
           ))
         }
         renderInput={(params) => (
-          <TextField
-            {...params}
-            fullWidth
-            data-testid="auto-complete-input"
-          />
+          <TextField {...params} fullWidth data-testid="auto-complete-input" />
         )}
       />
     </>

@@ -9,7 +9,11 @@ describe('AktAutoCompleteMultiple', () => {
 
   beforeEach(() => {
     render(
-      <AktAutoCompleteMultiple allSelectOption='Selecionar Todos' rows={mockOptions} onChange={mockOnChange} />
+      <AktAutoCompleteMultiple
+        allSelectOption="Selecionar Todos"
+        rows={mockOptions}
+        onChange={mockOnChange}
+      />
     );
   });
 
@@ -50,5 +54,19 @@ describe('AktAutoCompleteMultiple', () => {
     const allSelectOption = screen.getByText('Selecionar Todos');
     fireEvent.click(allSelectOption);
     expect(mockOnChange).toHaveBeenCalledWith(['Option1', 'Option2']);
-  })
+  });
+
+  it('Should clear all the values when clicing on allSelect Option and all values are selected', () => {
+    fireEvent.focus(screen.getByTestId('auto-complete-input'));
+    const allSelectOption = screen.getByText('Selecionar Todos');
+    const option1 = screen.getByText('Option1');
+    const option2 = screen.getByText('Option2');
+    fireEvent.click(allSelectOption);
+    fireEvent.blur(screen.getByTestId('auto-complete'));
+    fireEvent.focus(screen.getByTestId('auto-complete-input'));
+    fireEvent.click(allSelectOption);
+
+    expect(option1).not.toBeInTheDocument();
+    expect(option2).not.toBeInTheDocument();
+  });
 });
