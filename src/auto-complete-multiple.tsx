@@ -1,7 +1,11 @@
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+
+import { Checkbox } from '@mui/material';
 import Autocomplete from '@mui/material/Autocomplete';
 import Chip from '@mui/material/Chip';
 import TextField from '@mui/material/TextField';
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
+import DoneAllIcon from '@mui/icons-material/DoneAll';
 import { useState } from 'react';
 
 /**
@@ -24,23 +28,66 @@ interface AktAutoCompleteMultipleProps {
   limitTags?: number;
   iconColor?: string;
   onChange: (data: any) => void;
+  allSelectOption: string
 }
+
+const optionStyles = {
+  display: 'flex',
+  alignItems: 'center',
+  width: '100%',
+  gap: '8px',
+};
 
 const AktAutoCompleteMultiple: React.FC<AktAutoCompleteMultipleProps> = ({
   rows,
   value,
   title,
-  iconColor = '#6b6b6b',
   limitTags,
-  onChange
+  onChange,
+  allSelectOption
 }: AktAutoCompleteMultipleProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleChange = (value: any) => {
-    setIsOpen(false);
+
+    if (value.includes(allSelectOption)) {
+      value = value.length === rows.length ? [] : rows.filter((item) => item !== allSelectOption)
+      setIsOpen(false)
+    }
+
     onChange(value);
   };
 
+  const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
+  const checkedIcon = <CheckBoxIcon fontSize="small" />;
+
+  type OptionProps = { 
+    props: React.HTMLAttributes<HTMLLIElement>
+    option: any
+    selected: boolean
+  }
+  const Option = ({ props, option,  selected}: OptionProps ) => { 
+    return (
+      <li {...props}>
+      {option === allSelectOption ?
+        <div style={optionStyles}>
+         <DoneAllIcon style={{ color:'#48BB30' }} />
+         {option}
+      </div>
+      :
+      <div>
+        <Checkbox
+        icon={icon}
+        checkedIcon={checkedIcon}
+        style={{ marginRight: 8 }}
+        checked={selected}
+      />
+      {option}
+      </div>
+      }
+    </li>
+    )
+  }
   return (
     <>
       <Autocomplete
@@ -48,8 +95,12 @@ const AktAutoCompleteMultiple: React.FC<AktAutoCompleteMultipleProps> = ({
         open={isOpen}
         limitTags={limitTags || -1}
         title={title}
+        onFocus={() => setIsOpen(true)}
         onBlur={() => setIsOpen(false)}
         options={rows}
+        renderOption={(props, option, { selected }) => (
+          <Option props={props} option={option} selected={selected} />
+        )}
         disableCloseOnSelect
         value={value}
         data-testid="auto-complete"
@@ -70,32 +121,6 @@ const AktAutoCompleteMultiple: React.FC<AktAutoCompleteMultipleProps> = ({
             {...params}
             fullWidth
             data-testid="auto-complete-input"
-            InputProps={{
-              ...params.InputProps,
-              endAdornment: (
-                <div
-                  style={{
-                    position: 'absolute',
-                    display: 'flex',
-                    justifyContent: 'flex-end',
-                    right: 10,
-                    top: '50%',
-                    transform: 'translateY(-50%)'
-                  }}
-                  data-testid="auto-complete-end-adornment"
-                  onClick={() => setIsOpen(!isOpen)}
-                >
-                  <ArrowDropDownIcon
-                    style={{
-                      color: `${iconColor}`,
-                      cursor: 'pointer'
-                    }}
-                    data-testid="auto-complete-arrow"
-                    onClick={() => setIsOpen(!isOpen)}
-                  />
-                </div>
-              )
-            }}
           />
         )}
       />

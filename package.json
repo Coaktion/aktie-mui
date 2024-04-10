@@ -28,7 +28,9 @@
     "pre-commit:prepare": "husky install",
     "release:major": "standard-version --release-as major",
     "release:minor": "standard-version --release-as minor",
-    "release:patch": "standard-version --release-as patch"
+    "release:patch": "standard-version --release-as patch",
+    "prepackpackage": "npm run build",
+    "packpackage": "npm pack"
   },
   "keywords": [],
   "author": "",

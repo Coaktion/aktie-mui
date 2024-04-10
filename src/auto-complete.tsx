@@ -70,6 +70,7 @@ const AktAutoComplete: React.FC<AktAutoCompleteProps> = ({
       <Autocomplete
         open={isOpen}
         onBlur={() => setIsOpen(false)}
+        onFocus={() => setIsOpen(true)}
         options={rows}
         disabled={disabled}
         title={title}
