@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.3](https://github.com/Coaktion/aktie-mui/compare/v1.1.2...v1.1.3) (2024-04-10)
+
+
+### Features
+
+* adding select option to multiple autocomplete ([bf15ab7](https://github.com/Coaktion/aktie-mui/commit/bf15ab7f5467f195c36b0e6532fc971976677f2d))
+
 ## [1.1.0](https://github.com/Coaktion/aktie-mui/compare/v1.0.0...v1.1.0) (2024-03-22)
 
 
