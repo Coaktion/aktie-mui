@@ -27,7 +27,7 @@ interface AktAutoCompleteMultipleProps {
   limitTags?: number;
   iconColor?: string;
   onChange: (data: any) => void;
-  allSelectOption: string;
+  allSelectOption?: string;
 }
 
 interface OptionProps {
@@ -55,10 +55,10 @@ const AktAutoCompleteMultiple: React.FC<AktAutoCompleteMultipleProps> = ({
   const [isOpen, setIsOpen] = useState(false);
 
   const handleChange = (value: any) => {
-    if (value.includes(allSelectOption)) {
+    if (allSelectOption && value.includes(allSelectOption)) {
       // value = value.length === rows.length ? [] : rows.filter((item) => item !== allSelectOption)
       value = rows.filter((item) => item !== allSelectOption);
-      setIsOpen(false);
+      // setIsOpen(false);
     }
 
     onChange(value);
