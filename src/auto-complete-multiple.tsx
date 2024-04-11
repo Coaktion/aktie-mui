@@ -71,7 +71,7 @@ const AktAutoCompleteMultiple: React.FC<AktAutoCompleteMultipleProps> = ({
       <li {...props}>
         {option === allSelectOption ? (
           <div style={optionStyles}>
-            <DoneAllIcon style={{ color: '#48BB30'}} />
+            <DoneAllIcon style={{ color: '#48BB30' }} />
             {option}
           </div>
         ) : (
