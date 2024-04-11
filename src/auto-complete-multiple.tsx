@@ -30,11 +30,18 @@ interface AktAutoCompleteMultipleProps {
   allSelectOption: string;
 }
 
+interface OptionProps {
+  props: React.HTMLAttributes<HTMLLIElement>;
+  option: any;
+  selected: boolean;
+}
+
 const optionStyles = {
   display: 'flex',
   alignItems: 'center',
   width: '100%',
-  gap: '8px'
+  gap: '8px',
+  marginLeft: '10px'
 };
 
 const AktAutoCompleteMultiple: React.FC<AktAutoCompleteMultipleProps> = ({
@@ -59,12 +66,6 @@ const AktAutoCompleteMultiple: React.FC<AktAutoCompleteMultipleProps> = ({
 
   const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
   const checkedIcon = <CheckBoxIcon fontSize="small" />;
-
-  type OptionProps = {
-    props: React.HTMLAttributes<HTMLLIElement>;
-    option: any;
-    selected: boolean;
-  };
   const Option = ({ props, option, selected }: OptionProps) => {
     return (
       <li {...props}>
