@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.5](https://github.com/Coaktion/aktie-mui/compare/v1.1.4...v1.1.5) (2024-04-11)
+
+
+### Bug Fixes
+
+* turning allSelectOption an optional prop ([ada765c](https://github.com/Coaktion/aktie-mui/commit/ada765c1aba4709c0760b6e5cd0a71a707814543))
+
 ### [1.1.4](https://github.com/Coaktion/aktie-mui/compare/v1.1.3...v1.1.4) (2024-04-11)
 
 
