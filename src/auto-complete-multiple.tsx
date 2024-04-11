@@ -56,9 +56,7 @@ const AktAutoCompleteMultiple: React.FC<AktAutoCompleteMultipleProps> = ({
 
   const handleChange = (value: any) => {
     if (allSelectOption && value.includes(allSelectOption)) {
-      // value = value.length === rows.length ? [] : rows.filter((item) => item !== allSelectOption)
       value = rows.filter((item) => item !== allSelectOption);
-      // setIsOpen(false);
     }
 
     onChange(value);
