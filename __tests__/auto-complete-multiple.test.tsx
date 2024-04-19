@@ -33,7 +33,7 @@ describe('AktAutoCompleteMultiple', () => {
     fireEvent.click(option);
     expect(mockOnChange).toHaveBeenCalledWith(['Option1']);
   });
-  
+
   it('should display chips for selected values', () => {
     fireEvent.focus(screen.getByTestId('auto-complete-input'));
     const option1 = screen.getByText('Option1');

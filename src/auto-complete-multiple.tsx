@@ -85,7 +85,7 @@ const AktAutoCompleteMultiple: React.FC<AktAutoCompleteMultipleProps> = ({
       </li>
     );
   };
-  return ( 
+  return (
     <>
       <Autocomplete
         multiple
@@ -102,22 +102,28 @@ const AktAutoCompleteMultiple: React.FC<AktAutoCompleteMultipleProps> = ({
         data-testid="auto-complete"
         getOptionLabel={(option) => option}
         onChange={(_, value) => handleChange(value)}
-        renderTags={(tagValue, getTagProps) =>
-          <Box sx={{ display: 'flex', alignItems: 'center', maxWidth: '100%'}}>
-              {tagValue.slice(0, limitTags).map((option, index) => (
-                <Tooltip key={index} title={option}>
-                    <Chip
-                      data-testid="auto-complete-chip"
-                      label={option}
-                      sx={value.length >= limitTags ? { width: '40%'} : {width: '100%'}}
-                      key={index}
-                      {...getTagProps({ index })}
-                    />
-                </Tooltip>
-                ))}
-             <span>{value.length > limitTags && ` +${value.length - limitTags}`}</span>
+        renderTags={(tagValue, getTagProps) => (
+          <Box sx={{ display: 'flex', alignItems: 'center', maxWidth: '100%' }}>
+            {tagValue.slice(0, limitTags).map((option, index) => (
+              <Tooltip key={index} title={option}>
+                <Chip
+                  data-testid="auto-complete-chip"
+                  label={option}
+                  sx={
+                    value.length >= limitTags
+                      ? { width: '40%' }
+                      : { width: '100%' }
+                  }
+                  key={index}
+                  {...getTagProps({ index })}
+                />
+              </Tooltip>
+            ))}
+            <span>
+              {value.length > limitTags && ` +${value.length - limitTags}`}
+            </span>
           </Box>
-        }
+        )}
         renderInput={(params) => (
           <TextField {...params} fullWidth data-testid="auto-complete-input" />
         )}
