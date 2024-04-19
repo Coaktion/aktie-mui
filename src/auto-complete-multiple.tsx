@@ -1,7 +1,7 @@
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import DoneAllIcon from '@mui/icons-material/DoneAll';
-import { Checkbox } from '@mui/material';
+import { Box, Checkbox, Tooltip } from '@mui/material';
 import Autocomplete from '@mui/material/Autocomplete';
 import Chip from '@mui/material/Chip';
 import TextField from '@mui/material/TextField';
@@ -58,7 +58,6 @@ const AktAutoCompleteMultiple: React.FC<AktAutoCompleteMultipleProps> = ({
     if (allSelectOption && value.includes(allSelectOption)) {
       value = rows.filter((item) => item !== allSelectOption);
     }
-
     onChange(value);
   };
 
@@ -91,7 +90,6 @@ const AktAutoCompleteMultiple: React.FC<AktAutoCompleteMultipleProps> = ({
       <Autocomplete
         multiple
         open={isOpen}
-        limitTags={limitTags || -1}
         title={title}
         onFocus={() => setIsOpen(true)}
         onBlur={() => setIsOpen(false)}
@@ -104,16 +102,34 @@ const AktAutoCompleteMultiple: React.FC<AktAutoCompleteMultipleProps> = ({
         data-testid="auto-complete"
         getOptionLabel={(option) => option}
         onChange={(_, value) => handleChange(value)}
-        renderTags={(tagValue, getTagProps) =>
-          tagValue.map((option, index) => (
-            <Chip
-              data-testid="auto-complete-chip"
-              label={option}
-              {...getTagProps({ index })}
-              key={option}
-            />
-          ))
-        }
+        renderTags={(tagValue, getTagProps) => (
+          <Box sx={{ display: 'flex', alignItems: 'center', maxWidth: '100%' }}>
+            {tagValue.slice(0, limitTags).map((option, index) => {
+              const size =
+                value.length >= limitTags
+                  ? { width: '40%' }
+                  : { width: '100%' };
+              return (
+                <Tooltip
+                  data-testid="auto-complete-tooltip"
+                  key={index}
+                  title={option}
+                >
+                  <Chip
+                    data-testid="auto-complete-chip"
+                    label={option}
+                    sx={{ width: size }}
+                    key={index}
+                    {...getTagProps({ index })}
+                  />
+                </Tooltip>
+              );
+            })}
+            <span data-testid="remaining-chip-span">
+              {value.length > limitTags && ` +${value.length - limitTags}`}
+            </span>
+          </Box>
+        )}
         renderInput={(params) => (
           <TextField {...params} fullWidth data-testid="auto-complete-input" />
         )}
