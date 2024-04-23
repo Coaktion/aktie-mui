@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.8](https://github.com/Coaktion/aktie-mui/compare/v1.1.7...v1.1.8) (2024-04-23)
+
+
+### Bug Fixes
+
+* disable gray color for autocomplete component ([6775d31](https://github.com/Coaktion/aktie-mui/commit/6775d3172cda74edf358a39ade7ab7e2d6780f39))
+
 ### [1.1.7](https://github.com/Coaktion/aktie-mui/compare/v1.1.6...v1.1.7) (2024-04-19)
 
 ### [1.1.6](https://github.com/Coaktion/aktie-mui/compare/v1.1.5...v1.1.6) (2024-04-19)
