@@ -64,7 +64,7 @@ const AktAutoComplete: React.FC<AktAutoCompleteProps> = ({
     setIsOpen(false);
     onChange(value);
   };
-
+  const bgColor = disabled ? '#d3d3d3' : 'none';
   return (
     <>
       <Autocomplete
@@ -115,7 +115,7 @@ const AktAutoComplete: React.FC<AktAutoCompleteProps> = ({
             {...params}
             value={value}
             fullWidth
-            sx={disabled ? { bgcolor: '#d3d3d3' } : { bgcolor: 'none'} }
+            sx={{ bgcolor: bgColor }}
             label={label}
             disabled={disabled}
             data-testid="auto-complete-input"

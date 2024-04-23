@@ -127,4 +127,52 @@ describe('AktAutoComplete Component', () => {
 
     expect(input).toHaveAttribute('value', 'TEST VALUE');
   });
+
+  describe('when disabled', () => {
+    it('Should render with the disable Style', () => {
+      const onChange = jest.fn();
+      render(
+        <AktAutoComplete
+          rows={[
+            {
+              id: '1',
+              name: 'TEST VALUE'
+            }
+          ]}
+          textKey="name"
+          valueKey="name"
+          listItemKey="id"
+          groupKey="name"
+          disabled={true}
+          onChange={onChange}
+          value=""
+        />
+      );
+      const autocompleteInput = screen.getByTestId('auto-complete-input');
+      expect(autocompleteInput).toHaveStyle({ backgroundColor: '#d3d3d3' });
+    });
+
+    it('Should render without the disable Style', () => {
+      const onChange = jest.fn();
+      render(
+        <AktAutoComplete
+          rows={[
+            {
+              id: '1',
+              name: 'TEST VALUE'
+            }
+          ]}
+          textKey="name"
+          valueKey="name"
+          listItemKey="id"
+          groupKey="name"
+          disabled={false}
+          onChange={onChange}
+          value=""
+        />
+      );
+      const autocompleteInput = screen.getByTestId('auto-complete-input');
+      expect(autocompleteInput).toHaveStyle({ backgroundColor: 'none' });
+    });
+  });
 });
