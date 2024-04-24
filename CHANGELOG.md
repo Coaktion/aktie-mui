@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/Coaktion/aktie-mui/compare/v1.1.8...v1.2.0) (2024-04-24)
+
+
+### Features
+
+* add custom-loading-with-title component ([97aac85](https://github.com/Coaktion/aktie-mui/commit/97aac855f7150dce4c38773fa34cb45e14bb71e9))
+
 ### [1.1.8](https://github.com/Coaktion/aktie-mui/compare/v1.1.7...v1.1.8) (2024-04-23)
 
 
