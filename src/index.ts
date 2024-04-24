@@ -8,3 +8,4 @@ export { default as AktAutoCompleteMultiple } from './auto-complete-multiple';
 export { default as AktLoadingButton } from './loading-button';
 export { default as AktTable } from './table';
 export { default as AktTitle } from './title';
+export { default as AktLoadingSpinnerWithTitle } from './custom-loading-with-title';
