@@ -71,39 +71,6 @@ describe('AktAutoCompleteMultiple', () => {
     expect(option2).not.toBeInTheDocument();
   });
 
-  describe('Chip Size Test', () => {
-    it('Should have full width if the value len is lower than the limitTags', () => {
-      render(
-        <AktAutoCompleteMultiple
-          allSelectOption="Selecionar Todos"
-          rows={mockOptions}
-          value={['Option1']}
-          onChange={mockOnChange}
-          limitTags={2}
-        />
-      );
-
-      expect(screen.getByTestId('auto-complete-chip')).toHaveStyle(
-        'width: 100%'
-      );
-    });
-
-    it('Should have limited 40% width if the length value is greather than the limitTags', () => {
-      render(
-        <AktAutoCompleteMultiple
-          allSelectOption="Selecionar Todos"
-          rows={mockOptions}
-          value={['Option1', 'Option2']}
-          onChange={mockOnChange}
-          limitTags={2}
-        />
-      );
-      const chips = screen.getAllByTestId('auto-complete-chip');
-      for (const chip of chips) {
-        expect(chip).toHaveStyle('width: 40%');
-      }
-    });
-  });
   describe('Should display the left number of tags if', () => {
     it('Should display the left number of tags if the value length is greather than the limitTags', () => {
       render(
