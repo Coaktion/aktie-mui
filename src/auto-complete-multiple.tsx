@@ -103,12 +103,17 @@ const AktAutoCompleteMultiple: React.FC<AktAutoCompleteMultipleProps> = ({
         getOptionLabel={(option) => option}
         onChange={(_, value) => handleChange(value)}
         renderTags={(tagValue, getTagProps) => (
-          <Box sx={{ display: 'flex', alignItems: 'center', maxWidth: '100%' }}>
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+              gap: 0.5,
+              p: '5px',
+              overflow: 'hidden'
+            }}
+          >
             {tagValue.slice(0, limitTags).map((option, index) => {
-              const size =
-                value.length >= limitTags
-                  ? { width: '40%' }
-                  : { width: '100%' };
               return (
                 <Tooltip
                   data-testid="auto-complete-tooltip"
@@ -118,7 +123,9 @@ const AktAutoCompleteMultiple: React.FC<AktAutoCompleteMultipleProps> = ({
                   <Chip
                     data-testid="auto-complete-chip"
                     label={option}
-                    sx={{ width: size }}
+                    sx={{
+                      maxWidth: 'calc(100% - 8px)'
+                    }}
                     key={index}
                     {...getTagProps({ index })}
                   />
